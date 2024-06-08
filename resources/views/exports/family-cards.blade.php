@@ -46,15 +46,15 @@
         @foreach ($family_cards as $kk)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ now()->format("Y-m") }}</td>
+                <td>{{ now()->format('Y-m') }}</td>
                 <td>{{ $kk->contract_number }}</td>
-                <td>{{ $kk->kk_no_gros }}</td>
-                <td>{{ $kk->kk_no }}</td>
+                <td>{{ "'" . $kk->kk_no_gros }}</td>
+                <td>{{ "'" . $kk->kk_no }}</td>
                 <td>{{ $kk->cabang }}</td>
-                <td>{{ "" }}</td>
+                <td>{{ '' }}</td>
                 <td>{{ $kk->name }}</td>
-                <td>{{ $kk->nik_gros }}</td>
-                <td>{{ $kk->nik }}</td>
+                <td>{{ "'" . $kk->nik_gros }}</td>
+                <td>{{ "'" . $kk->nik }}</td>
                 <td>{{ $kk->gender }}</td>
                 <td>{{ $kk->place_of_birth }}</td>
                 <td>{{ $kk->date_of_birth }}</td>
@@ -66,12 +66,12 @@
                 <td>{{ $kk->citizenship }}</td>
                 <td>{{ $kk->father_name }}</td>
                 <td>{{ $kk->mother_name }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ '' }}</td>
                 <td>{{ $kk->father_on_family_card }}</td>
                 <td>{{ $kk->address }}</td>
                 <td>{{ $kk->kelurahan }}</td>
@@ -80,9 +80,9 @@
                 <td>{{ $kk->kecamatan }}</td>
                 <td>{{ $kk->kabupaten }}</td>
                 <td>{{ $kk->province }}</td>
-                <td>{{ "" }}</td>
-                <td>{{ now()->format("Y-m-d") }}</td>
-                <td>{{ "" }}</td>
+                <td>{{ '' }}</td>
+                <td>{{ now()->format('Y-m-d') }}</td>
+                <td>{{ '' }}</td>
             </tr>
         @endforeach
     </tbody>
