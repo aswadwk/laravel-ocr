@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('kk_no_gros')->nullable();
             $table->string('kk_no')->nullable();
             $table->string('cabang')->nullable();
+            $table->string('name')->nullable();
             $table->string('nik_gros')->nullable();
             $table->string('nik')->nullable();
             $table->string('gender')->nullable();
@@ -31,7 +32,6 @@ return new class extends Migration
             $table->string('father_name')->nullable();
             $table->string('mother_name')->nullable();
             $table->string('father_on_family_card')->nullable();
-            $table->string('mother_on_family_card')->nullable();
             $table->string('address')->nullable();
             $table->string('rt_rw')->nullable();
             $table->string('kelurahan')->nullable();
