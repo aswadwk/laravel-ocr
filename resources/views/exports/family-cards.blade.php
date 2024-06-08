@@ -52,7 +52,7 @@
                 <td>{{ $kk->kk_no }}</td>
                 <td>{{ $kk->cabang }}</td>
                 <td>{{ "" }}</td>
-                <td>{{ "" }}</td>
+                <td>{{ $kk->name }}</td>
                 <td>{{ $kk->nik_gros }}</td>
                 <td>{{ $kk->nik }}</td>
                 <td>{{ $kk->gender }}</td>
