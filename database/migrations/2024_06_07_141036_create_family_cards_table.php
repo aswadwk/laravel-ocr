@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('family_cards', function (Blueprint $table) {
             $table->id();
+            $table->string('number')->nullable();
             $table->string('contract_number')->nullable();
             $table->string('kk_no_gros')->nullable();
             $table->string('kk_no')->nullable();

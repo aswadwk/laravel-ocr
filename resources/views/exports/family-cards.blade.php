@@ -45,9 +45,9 @@
         <?php $no = 1; ?>
         @foreach ($family_cards as $kk)
             <tr>
-                <td>{{ $no++ }}</td>
+                <td>{{ $kk->number }}</td>
                 <td>{{ now()->format('Y-m') }}</td>
-                <td>{{ $kk->contract_number }}</td>
+                <td>{{ "'" . $kk->contract_number }}</td>
                 <td>{{ "'" . $kk->kk_no_gros }}</td>
                 <td>{{ "'" . $kk->kk_no }}</td>
                 <td>{{ $kk->cabang }}</td>
@@ -82,7 +82,7 @@
                 <td>{{ $kk->province }}</td>
                 <td>{{ '' }}</td>
                 <td>{{ now()->format('Y-m-d') }}</td>
-                <td>{{ '' }}</td>
+                <td>{{ 'OCR' }}</td>
             </tr>
         @endforeach
     </tbody>
