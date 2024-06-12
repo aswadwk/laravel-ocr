@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('smart_scans', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();
             $table->longText('response_json')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
