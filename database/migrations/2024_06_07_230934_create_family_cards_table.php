@@ -42,7 +42,18 @@ return new class extends Migration
             $table->string('postal_code')->nullable();
             $table->string('file_name')->nullable();
             $table->string('file_path')->nullable();
+
+            $table->string('status')->nullable();  // approved, etc
+            $table->timestamp('approved_at')->nullable();
+
+            $table->uuid('approved_by')
+                ->nullable();
+            $table->foreign('approved_by')
+                ->references('id')->on('users');
+
             $table->uuid('smart_scan_id')->nullable();
+            $table->foreign('smart_scan_id')
+                ->references('id')->on('smart_scans');
 
             $table->timestamps();
             $table->softDeletes();
