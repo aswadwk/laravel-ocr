@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('smart_scans', function (Blueprint $table) {
-            $table->string('file_path')->nullable();
+        Schema::create('tenants', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name');
+            $table->string('logo')->nullable();
+
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('smart_scans', function (Blueprint $table) {
-            $table->dropColumn('file_path');
-        });
+        Schema::dropIfExists('tenants');
     }
 };

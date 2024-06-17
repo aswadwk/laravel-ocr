@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('family_cards', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('number')->nullable();
             $table->string('contract_number')->nullable();
             $table->string('kk_no_gros')->nullable();
@@ -41,7 +41,22 @@ return new class extends Migration
             $table->string('province')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();
+
+            $table->string('status')->nullable();  // approved, etc
+            $table->timestamp('approved_at')->nullable();
+
+            $table->uuid('approved_by')
+                ->nullable();
+            $table->foreign('approved_by')
+                ->references('id')->on('users');
+
+            $table->uuid('smart_scan_id')->nullable();
+            $table->foreign('smart_scan_id')
+                ->references('id')->on('smart_scans');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
